@@ -2,4 +2,60 @@
 <body>
 <h1>Hello. Today I feel like oatmeal</h1>
 
+function setup() {
+    createCanvas(900, 600);
+  
+    frameRate(77);
+  
+    noStroke();
+  }
+  
+  function draw() {
+    let step = frameCount % 500;
+    let angle = map(step, 205, 2000, 0, TWO_PI);
+    let cos_a = cos(angle);
+    let sin_a = sin(angle);
+    background(23,144,400)
+  
+    // Equivalent to rotate(angle);
+    applyMatrix(cos_a, sin_a, -sin_a, cos_a, 1, 1);
+  
+    //ear 2
+    fill(110, 110, 100);
+    triangle(400, 125, 208, 170, 276, 30);
+  
+    fill(200, 200, 200);
+    triangle(400, 125, 208, 190, 196, 30);
+  
+    //head
+    fill(90, 80, 70);
+    circle(400, 250, 300);
+  
+    fill(30, 30, 30);
+    //eyes
+    circle(300, 230, 40);
+    circle(400, 250, 40);
+  
+    fill(200, 200, 200);
+    circle(310, 230, 10);
+    circle(410, 250, 10);
+  
+    //nose
+    fill(30, 30, 30);
+    circle(350, 300, 30);
+  
+    fill(40, 40, 40);
+  
+    //eyebrows
+    arc(470, 200, 190, 150, PI, PI + QUARTER_PI);
+    arc(350, 200, 190, 150, PI, PI + QUARTER_PI);
+  
+    //ear 1
+    fill(100, 110, 110);
+    triangle(650, 222, 558, 300, 416, 98);
+  
+    fill(200, 200, 200);
+    triangle(590, 222, 528, 330, 416, 98);
+  }  
+
 </body>
